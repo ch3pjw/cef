@@ -181,7 +181,7 @@ class TestCEFLogger(unittest.TestCase):
         file_ = config['cef.file']
 
         environ = {'PATH_INFO':
-                u'/reviewers/receipt/issue/\u043f\u0442\u0442-news'}
+                   u'/reviewers/receipt/issue/\u043f\u0442\u0442-news'}
         kw = {'cs2': 1L,
               'cs2Label': u'\xd0'}
 

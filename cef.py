@@ -209,7 +209,7 @@ def _filter_params(namespace, data, replace_dot='_', splitchar='.'):
 
 
 def _get_fields(name, severity, environ, config, username=None,
-               signature=None, **kw):
+                signature=None, **kw):
     name = _convert_prefix(name)
     if signature is None:
         signature = name
@@ -263,7 +263,7 @@ def _format_msg(fields, kw, maxlen=_MAXLEN):
     msg = _CEF_FORMAT % fields
 
     extensions = [(_len(value), len(key), key, value)
-                    for key, value in kw.items()
+                  for key, value in kw.items()
                   if key not in _EXTENSIONS]
     extensions.sort()
 
@@ -301,7 +301,7 @@ def log_cef(name, severity, environ, config, username='none',
     """
     config = _filter_params('cef', config)
     fields = _get_fields(name, severity, environ, config, username=username,
-                        signature=signature, **kw)
+                         signature=signature, **kw)
     msg = _format_msg(fields, kw)
 
     if config['file'] == 'syslog':
